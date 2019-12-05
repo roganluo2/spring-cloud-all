@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service-client
+  autoconfigure:
+    exclude: org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistrationAutoConfiguration
+
+  kafka:
+    consumer:
+      bootstrap-servers: ecs.ali.com:9092
+      group-id: cloud-stream-group2
+      enable-auto-commit: true
+      value-deserializer: com.gupaoedu.service.client.kafka.ObjectDeserializer
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 8080 #随机端口
