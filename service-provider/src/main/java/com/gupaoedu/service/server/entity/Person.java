@@ -1,6 +1,7 @@
 package com.gupaoedu.service.server.entity;
 
 import java.io.Serializable;
+import java.util.StringJoiner;
 
 public class Person implements Serializable {
 
@@ -22,5 +23,13 @@ public class Person implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Person.class.getSimpleName() + "[", "]")
+                .add("name='" + name + "'")
+                .add("id=" + id)
+                .toString();
     }
 }

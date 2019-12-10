@@ -6,7 +6,13 @@ spring:
     bootstrap-servers: ecs.ali.com:9092
     producer:
       client-id: kafka-cloud-stream
-      value-serializer: com.gupaoedu.service.server.kafka.ObjectSerializer
+      value-serializer: com.gupaoedu.service.server.kafka.serialize.ObjectSerializer
+
+    consumer:
+      group-id: kafka-cloud-stream-group
+      enable-auto-commit: true
+      value-deserializer: com.gupaoedu.service.server.kafka.serialize.ObjectDeserializer
+      auto-offset-reset: earliest
 
 eureka:
   server: # 官方不存在的配置（自定义配置）

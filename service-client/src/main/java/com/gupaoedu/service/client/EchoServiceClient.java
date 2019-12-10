@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface EchoServiceClient {
 
     @GetMapping(value = "/echo/{message}")
-    String echo(@PathVariable String message);
+    String echo(@PathVariable(name = "message") String message);
 }

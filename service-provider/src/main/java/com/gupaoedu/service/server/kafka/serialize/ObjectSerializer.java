@@ -1,4 +1,4 @@
-package com.gupaoedu.service.server.kafka;
+package com.gupaoedu.service.server.kafka.serialize;
 
 import org.apache.kafka.common.serialization.Serializer;
 
